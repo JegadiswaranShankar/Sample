@@ -1,0 +1,1071 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Registration" this:Registration.url="https://www-uat.idp.com/singapore/register-signin" this:Registration.c4c_url="https://my330697.crm.ondemand.com/" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sic="clr-namespace:System.IO.Compression;assembly=System.IO.Compression.FileSystem" xmlns:t="clr-namespace:TestReportGenerator;assembly=TestReportGenerator" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="url" Type="InArgument(x:String)" />
+    <x:Property Name="c4c_url" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>548,14075</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Registration_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.IO.Compression</x:String>
+      <x:String>ICSharpCode.AvalonEdit</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>ICSharpCode.AvalonEdit</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Registration" sap:VirtualizedContainerService.HintSize="508,13995" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="TTPVT" Name="firstname" />
+      <Variable x:TypeArguments="x:String" Default="Test" Name="lastname" />
+      <Variable x:TypeArguments="x:String" Default="9952404461" Name="mobilenumber" />
+      <Variable x:TypeArguments="x:String" Default="Welcome2018*" Name="password1" />
+      <Variable x:TypeArguments="x:String" Default="Chrome" Name="Browser" />
+      <Variable x:TypeArguments="x:String" Default="registrations_idp099@hctest.com" Name="emailaddress" />
+      <Variable x:TypeArguments="x:String" Name="siteid" />
+      <Variable x:TypeArguments="x:String" Default="Yes" Name="marketing_acceptance" />
+      <Variable x:TypeArguments="x:String" Name="siteid_c4cvalue" />
+      <Variable x:TypeArguments="x:String" Name="marketingacceptance_c4cvalue" />
+      <Variable x:TypeArguments="ui:Image" Name="FormImage1" />
+      <Variable x:TypeArguments="ui:Image" Name="EventImage" />
+      <Variable x:TypeArguments="ui:Image" Name="AdditionalImage" />
+      <Variable x:TypeArguments="ui:Image" Name="CounsellorImage" />
+      <Variable x:TypeArguments="ui:Image" Name="AdditionalInfoImage" />
+      <Variable x:TypeArguments="ui:Image" Name="MarketingImage" />
+      <Variable x:TypeArguments="ui:Image" Name="SMSImage" />
+      <Variable x:TypeArguments="ui:Image" Name="TicketsImage" />
+      <Variable x:TypeArguments="ui:Image" Name="KnowledgeImage" />
+      <Variable x:TypeArguments="ui:Image" Name="DocumentImage" />
+      <Variable x:TypeArguments="ui:Image" Name="ContractsImage" />
+      <Variable x:TypeArguments="ui:Image" Name="ChangesImage" />
+      <Variable x:TypeArguments="x:String" Name="backoffice_emailstorage" />
+      <Variable x:TypeArguments="x:String" Default="jegadiswaran.s@hotcourses.co.in" Name="userid" />
+      <Variable x:TypeArguments="ui:Image" Name="BOimage" />
+      <Variable x:TypeArguments="x:String" Default="Welcome2020" Name="password" />
+      <Variable x:TypeArguments="ui:Image" Name="OverviewImage" />
+      <Variable x:TypeArguments="ui:Image" Name="ActivityImage" />
+      <Variable x:TypeArguments="ui:Image" Name="AddressImage" />
+      <Variable x:TypeArguments="ui:Image" Name="NoteImage" />
+      <Variable x:TypeArguments="ui:Image" Name="HistoryImage" />
+      <Variable x:TypeArguments="ui:Image" Name="StudentImage" />
+      <Variable x:TypeArguments="ui:Image" Name="LeadImage" />
+      <Variable x:TypeArguments="ui:Image" Name="OppImage" />
+      <Variable x:TypeArguments="x:String" Name="name_storage" />
+      <Variable x:TypeArguments="x:String" Name="phone_storage" />
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <Variable x:TypeArguments="x:String" Name="nationality_storage" />
+      <Variable x:TypeArguments="x:String" Name="siteid_storage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_subject_storage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_studydestination_storage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_studylevel" />
+      <Variable x:TypeArguments="x:String" Name="conv_studylevel" />
+      <Variable x:TypeArguments="x:String" Name="c4c_email_storage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_funding" />
+      <Variable x:TypeArguments="x:String" Name="Marketing_acceptance_c4cstorage" />
+      <Variable x:TypeArguments="x:String" Name="Name_lead_storage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_mobilestorage_lead" />
+      <Variable x:TypeArguments="x:String" Name="TCAcceptance_c4cstorage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_idporganization" />
+      <Variable x:TypeArguments="x:String" Name="c4c_idpoffice" />
+      <Variable x:TypeArguments="x:String" Name="c4c_idpteam" />
+      <Variable x:TypeArguments="x:String" Name="email_c4c_lead" />
+      <Variable x:TypeArguments="x:String" Name="c4c_country_lead" />
+      <Variable x:TypeArguments="x:String" Default="Course Enquiry" Name="category_value" />
+      <Variable x:TypeArguments="x:String" Name="category_c4c_lead" />
+      <Variable x:TypeArguments="x:String" Name="Source_c4cvlaue_lead" />
+      <Variable x:TypeArguments="x:String" Name="Status_c4cvalue_lead" />
+      <Variable x:TypeArguments="x:String" Name="c4c_studylevel_qualification" />
+      <Variable x:TypeArguments="x:String" Name="c4c_studydestination_qualification" />
+      <Variable x:TypeArguments="x:String" Name="c4c_preferredlanguage_qualification" />
+      <Variable x:TypeArguments="x:String" Default="English" Name="PreferredLanguage" />
+      <Variable x:TypeArguments="x:String" Name="c4c_marketingacceptance_qualification" />
+      <Variable x:TypeArguments="x:String" Name="ContactMec4cStorage" />
+      <Variable x:TypeArguments="x:String" Name="ContactMeAt_c4c" />
+      <Variable x:TypeArguments="x:String" Default="Unqualified" Name="Qualification" />
+      <Variable x:TypeArguments="x:String" Name="Qualification_c4cstorage" />
+      <Variable x:TypeArguments="x:String" Default="GENERAL" Name="FormType" />
+      <Variable x:TypeArguments="x:String" Name="FormType_c4cstorage" />
+      <Variable x:TypeArguments="x:String" Name="C4C_ReferringURL_storage" />
+      <Variable x:TypeArguments="x:String" Default="Singapore Satellite Office" Name="C4C_IDPNearestOffic_value" />
+      <Variable x:TypeArguments="x:String" Name="C4C_IDPNearestOffic_storage" />
+      <Variable x:TypeArguments="x:String" Name="C4C_SourceSiteId_storage" />
+      <Variable x:TypeArguments="x:String" Name="C4C_Howdidyouhear_storage" />
+      <Variable x:TypeArguments="x:String" Default="Yes" Name="C4C_FirstLead_value" />
+      <Variable x:TypeArguments="x:String" Name="C4C_FirstLead_storage" />
+      <Variable x:TypeArguments="ui:Image" Name="FormImage2" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="486,22" sap2010:WorkflowViewState.IdRef="StartTest_8" ScenarioName="Starting started" Status="STARTED" />
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser - Front end" Hidden="False" sap:VirtualizedContainerService.HintSize="486,154" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" NewSession="True" Private="False" Url="[url]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,3378" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="down" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="down" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="down" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="down" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="down" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  register.firstNa...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" SendWindowMessages="False" SimulateType="False" Text="[firstname]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="49c8f1659f8dd2ed7f7ba4def6f97a05" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;input' idx='3' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  register.lastName'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[lastname]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="554d68ebdc6d0da136bda3f30f0ecc31" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;input' idx='4' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  register.mobile'" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="AD (+376)">
+        <ui:SelectItem.Items>
+          <scg:List x:TypeArguments="x:String" Capacity="50">
+            <x:String>Please select</x:String>
+            <x:String>AD (+376)</x:String>
+            <x:String>AE (+971)</x:String>
+            <x:String>AF (+93)</x:String>
+            <x:String>AG (+1809)</x:String>
+            <x:String>AI (+1809)</x:String>
+            <x:String>AL (+355)</x:String>
+            <x:String>AM (+374)</x:String>
+            <x:String>AO (+244)</x:String>
+            <x:String>AQ (+672)</x:String>
+            <x:String>AR (+54)</x:String>
+            <x:String>AS (+1-684)</x:String>
+            <x:String>AT (+43)</x:String>
+            <x:String>AU (+61)</x:String>
+            <x:String>AW (+297)</x:String>
+            <x:String>AX (+358)</x:String>
+            <x:String>AZ (+994)</x:String>
+            <x:String>BA (+387)</x:String>
+            <x:String>BB (+1809)</x:String>
+            <x:String>BD (+880)</x:String>
+            <x:String>BE (+32)</x:String>
+            <x:String>BF (+226)</x:String>
+            <x:String>BG (+359)</x:String>
+            <x:String>BH (+973)</x:String>
+            <x:String>BI (+257)</x:String>
+            <x:String>BJ (+229)</x:String>
+            <x:String>BL (+590)</x:String>
+            <x:String>BM (+1809)</x:String>
+            <x:String>BN (+673)</x:String>
+            <x:String>BO (+591)</x:String>
+            <x:String>BQ (+599)</x:String>
+            <x:String>BR (+55)</x:String>
+            <x:String>BS (+1809)</x:String>
+            <x:String>BT (+975)</x:String>
+            <x:String>BV (+47)</x:String>
+            <x:String>BW (+267)</x:String>
+            <x:String>BY (+375)</x:String>
+            <x:String>BZ (+501)</x:String>
+            <x:String>CA (+1)</x:String>
+            <x:String>CC (+891)</x:String>
+            <x:String>CD (+242)</x:String>
+            <x:String>CF (+236)</x:String>
+            <x:String>CG (+242)</x:String>
+            <x:String>CH (+41)</x:String>
+            <x:String>CI (+225)</x:String>
+            <x:String>CK (+682)</x:String>
+            <x:String>CL (+56)</x:String>
+            <x:String>CM (+237)</x:String>
+            <x:String>CN (+86)</x:String>
+            <x:String>CO (+57)</x:String>
+          </scg:List>
+        </ui:SelectItem.Items>
+        <ui:SelectItem.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="674df1afe9b2df1ba34ffa67df83b4fb" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='SELECT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;select' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:SelectItem.Target>
+      </ui:SelectItem>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[mobilenumber]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a212817d673d419c67d9853189941594" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  register.email'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[emailaddress]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2c61155afb7e06163a7c894148a8503a" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;input' idx='5' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  password'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[password1]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6345cd3eb2471c869d46a3b09395aff0" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;input' idx='6' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  register.checkPwd'" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="False" Text="[password1]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0f038cf0e90db198bc76376f29253f73" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;input' idx='7' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LABEL'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="TopLeft">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="91764a0c1967295523336f520815b962" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl aaname=' I accept IDP’s  and   ' parentid='IDPRegisterForm' tag='LABEL' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LABEL'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="TopLeft">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d0af4273bd390f768f03c0a8e50f42fe" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl parentid='IDPRegisterForm' tag='LABEL' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='3' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'LABEL'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="TopLeft">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3ebd3d22ee8f123d8cb391e1d7af575c" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl parentid='IDPRegisterForm' tag='LABEL' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='4' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'DIV'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[FormImage1]">
+        <ui:TakeScreenshot.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5ce1d26f843cbef04471c1f0041fc182" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TakeScreenshot.Target>
+      </ui:TakeScreenshot>
+      <ui:SaveImage DisplayName="Save Image" FileName="IDP_ME_Scripts\Result\RegistrationForm.png" sap:VirtualizedContainerService.HintSize="314,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[FormImage1]" />
+      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="pgup" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+        <ui:SendHotkey.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+        </ui:SendHotkey.Target>
+      </ui:SendHotkey>
+      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'DIV'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_6" Screenshot="[FormImage2]">
+        <ui:TakeScreenshot.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="af50eac9e5844922ad493a528f4eacb1" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TakeScreenshot.Target>
+      </ui:TakeScreenshot>
+      <ui:SaveImage DisplayName="Save Image" FileName="IDP_ME_Scripts\Result\RegistrationForm1.png" sap:VirtualizedContainerService.HintSize="314,92" sap2010:WorkflowViewState.IdRef="SaveImage_6" Image="[FormImage2]" />
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  submitRegisterF...'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1d1e9ee750f4ae0ee1a22ebb2ff77f98" Selector="&lt;html app='chrome.exe' title='Register or Sign in | IDP Singapore' /&gt;&lt;webctrl tag='BUTTON' css-selector='body&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;fieldset&amp;gt;div&amp;gt;button' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser - C4C" Hidden="False" sap:VirtualizedContainerService.HintSize="486,154" sap2010:WorkflowViewState.IdRef="OpenBrowser_7" NewSession="True" Private="False" Url="[c4c_url]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,6642" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_25" />
+      <ui:Highlight Color="DarkBlue" ContinueOnError="True" DisplayName="Highlight 'INPUT  USERNAME_FIELD-i...'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_43">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="25e42d74a80929bfb3125f9c6b126442" Selector="&lt;html app='chrome.exe' title='Logon' /&gt;&lt;webctrl id='USERNAME_FIELD-inner' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  USERNAME_FIELD-i...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" SendWindowMessages="False" SimulateType="False" Text="[userid]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0f229b1a22429c8c230252d413af5047" Selector="&lt;html app='chrome.exe' title='Logon' /&gt;&lt;webctrl id='USERNAME_FIELD-inner' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TypeInto>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'INPUT  PASSWORD_FIELD-i...'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_44">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fbd8266e50709322fdedeced38c2c9a9" Selector="&lt;html app='chrome.exe' title='Logon' /&gt;&lt;webctrl id='PASSWORD_FIELD-inner' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  PASSWORD_FIELD-i...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" SendWindowMessages="False" SimulateType="False" Text="[password]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="fbd8266e50709322fdedeced38c2c9a9" Selector="&lt;html app='chrome.exe' title='Logon' /&gt;&lt;webctrl id='PASSWORD_FIELD-inner' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TypeInto>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'BUTTON  LOGIN_LINK'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_45">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="726ab4ffdca588d5f7260e4aed332672" Selector="&lt;html app='chrome.exe' title='Logon' /&gt;&lt;webctrl tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN  LOGIN_LINK_CONTENT'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="028c69f3a5bc91b21199296ceca2c8df" Selector="&lt;html app='chrome.exe' title='Logon' /&gt;&lt;webctrl id='LOGIN_LINK_CONTENT' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'SPAN'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_46">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2e3181b94b91f4e0e36be8b120f9c0ff" Selector="&lt;html app='chrome.exe' idx='2' /&gt;&lt;webctrl parentid='__item1' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_28" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4ab8801a4dc4c3b7fa538925b13ab8fb" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl parentid='__item1' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'INPUT  __field0-I'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_47">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="65c9f8c37e0e5f77a1ba29d460eaafa4" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl id='__field0-I' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  __field0-I'" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,134" sap2010:WorkflowViewState.IdRef="TypeInto_16" SendWindowMessages="False" SimulateType="False" Text="[emailaddress]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="65c9f8c37e0e5f77a1ba29d460eaafa4" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl id='__field0-I' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TypeInto>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'DIV  __field0-search'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_48">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="bc7b6b9c83785635d6bf264caa5bd87f" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl id='__field0-search' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  __field0-search'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_29" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f393f8bfbe843fa587e1dcb41f93085d" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl id='__field0-search' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'A  __link18'" HighlightTime="500" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_49">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f639bfdfd31104ba64cca899443b791e" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl tag='A' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;a' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  __link18'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_30" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1e091796ff7598313a824f4b41c59325" Selector="&lt;html app='chrome.exe' title='Home - SAP Cloud for Customer' /&gt;&lt;webctrl tag='A' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;div&amp;gt;a' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'BDI'" HighlightTime="500" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_50">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c5318b664c4745c45e02a3e83048a94c" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='BDI' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span&amp;gt;bdi' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN  formpanezpP3jl63I...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_31" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0256edcf7446dfc482805826e87c3f4e" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span' idx='2' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'DIV  __layout82'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_3" Screenshot="[OverviewImage]">
+        <ui:TakeScreenshot.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7667c0cd7b918903af489020563b6206" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl id='__layout82' tag='DIV' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TakeScreenshot.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TakeScreenshot>
+      <ui:SaveImage DisplayName="Save Image" FileName="IDP_ME_Scripts\Result\OverView.png" sap:VirtualizedContainerService.HintSize="464,92" sap2010:WorkflowViewState.IdRef="SaveImage_3" Image="[OverviewImage]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:SaveImage>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'SPAN  statictext9vv8Udj...'" HighlightTime="500" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_51">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="bc90cc92776028f7534f39f8490721ed" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Highlight>
+      <ui:GetValue ContinueOnError="True" DisplayName="Get Text 'SPAN  statictext9vv8Udj...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_35">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="39a1f9bc3686cd6caf8b7fd5becf8132" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[name_storage]</OutArgument>
+        </ui:GetValue.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetValue>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_1" ScenarioName="Verify the name field in C4C matches with the First name provided in registration form&#xA;" Status="STARTED" />
+      <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_26" />
+      <If Condition="[name_storage.Contains(firstname)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_36">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_1" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_2" Status="FAIL" />
+        </If.Else>
+      </If>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_2" ScenarioName="Verify the name field in C4C matches with the Last name provided in registration form&#xA;" Status="STARTED" />
+      <If Condition="[name_storage.Contains(lastname)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_37">
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_3" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_4" Status="FAIL" />
+        </If.Else>
+      </If>
+      <ui:GetValue ContinueOnError="True" DisplayName="Get Text 'DIV  __container17'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_36">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="92f01e97f74aab0b4477e411c000a349" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='A' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[c4c_email_storage]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_3" ScenarioName="Verify the Primary E-Mail field in C4C matches with the Your Email address provided in registration form&#xA;" Status="STARTED" />
+      <If Condition="[c4c_email_storage.Equals(emailaddress)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_38">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_5" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_6" Status="FAIL" />
+        </If.Else>
+      </If>
+      <ui:Highlight Color="Gold" ContinueOnError="True" DisplayName="Highlight 'SPAN  inputfield_9XmP43...'" HighlightTime="500" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_52">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cd54c2c33291a9125eaa7b58fb28f339" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='17' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+      </ui:Highlight>
+      <ui:GetValue ContinueOnError="True" DisplayName="Get Text 'SPAN  inputfield_9XmP43...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_37">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cd54c2c33291a9125eaa7b58fb28f339" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='17' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[phone_storage]</OutArgument>
+        </ui:GetValue.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetValue>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_4" ScenarioName="Verify the Mobile field in C4C matches with the Mobile number provided in registration form&#xA;" Status="STARTED" />
+      <If Condition="[phone_storage.Contains(mobilenumber.ToString)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_39">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_7" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_8" Status="FAIL" />
+        </If.Else>
+      </If>
+      <ui:Highlight Color="Gold" DisplayName="Highlight 'SPAN  checkbox26fbad40e...'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_85">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="85ffe5ab2a632ff73fb6f6a18008542a" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='27' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+      </ui:Highlight>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  checkbox26fbad40e...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_69">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="85ffe5ab2a632ff73fb6f6a18008542a" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='27' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[marketingacceptance_c4cvalue]</OutArgument>
+        </ui:GetValue.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetValue>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_5" ScenarioName="Verify the Marketing Acceptance in C4C matches with expected result&#xA;" Status="STARTED" />
+      <If Condition="[marketingacceptance_c4cvalue.Equals(marketing_acceptance)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_71">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_9" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_10" Status="FAIL" />
+        </If.Else>
+      </If>
+      <ui:Highlight Color="Gold" DisplayName="Highlight 'SPAN  dropdownlistbox5e...'" HighlightTime="1000" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Highlight_86">
+        <ui:Highlight.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="021478d7e469043d4e023e7f515d7781" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='26' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Highlight.Target>
+      </ui:Highlight>
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  dropdownlistbox5e...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_70">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="021478d7e469043d4e023e7f515d7781" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='26' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[siteid_c4cvalue]</OutArgument>
+        </ui:GetValue.Value>
+      </ui:GetValue>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_6" ScenarioName="Verify the Site ID in C4C matches with the expected result&#xA;" Status="STARTED" />
+      <If Condition="[url.Contains(siteid_c4cvalue)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_72">
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_11" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_12" Status="FAIL" />
+        </If.Else>
+      </If>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_40" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="604f5783aceabdb79080fd7628d9b367" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='SPAN' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='4' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN  __button110-conte...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_50" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="20fe62ba7210c2e3cf706acdd42caac0" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='BDI' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span&amp;gt;bdi' idx='2' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN  __mbox-btn-0-cont...'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_42" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="632d378e5bb66827a8adde7346143770" Selector="&lt;html app='chrome.exe' title='TTPVT Test - SAP Cloud for Customer' /&gt;&lt;webctrl tag='BDI' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span&amp;gt;bdi' idx='3' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+    </Sequence>
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser - Back Office" Hidden="False" sap:VirtualizedContainerService.HintSize="486,114" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" NewSession="True" Private="False" Url="https://catalogue-stg-admin.idp.com/backoffice/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,3167" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  vP5Qb1'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_43" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="74cd1b3d38a642cbb40ed1d073db0454" Selector="&lt;html app='chrome.exe' title='Login' /&gt;&lt;webctrl tag='INPUT' tableCol='3' tableRow='1' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  vP5Qb1'" EmptyField="True" sap:VirtualizedContainerService.HintSize="464,134" sap2010:WorkflowViewState.IdRef="TypeInto_17" SendWindowMessages="False" SimulateType="False" Text="dhanya.murali@idp.com">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="74cd1b3d38a642cbb40ed1d073db0454" Selector="&lt;html app='chrome.exe' title='Login' /&gt;&lt;webctrl tag='INPUT' tableCol='3' tableRow='1' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:TypeInto>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  uQ6Qg1'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_44" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0e4f833119ad19ecfd11e2fef1ee0d15" Selector="&lt;html app='chrome.exe' title='Login' /&gt;&lt;webctrl tag='INPUT' tableCol='3' tableRow='1' idx='2' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  uQ6Qg1'" EmptyField="True" sap:VirtualizedContainerService.HintSize="464,134" sap2010:WorkflowViewState.IdRef="TypeInto_18" SendWindowMessages="False" SimulateType="False" Text="idpqamng@589!">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0e4f833119ad19ecfd11e2fef1ee0d15" Selector="&lt;html app='chrome.exe' title='Login' /&gt;&lt;webctrl tag='INPUT' name='j_password' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  gX5Qf'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_45" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f329dc78767cbbd64a9e756f6794b559" Selector="&lt;html app='chrome.exe' title='Login' /&gt;&lt;webctrl tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN  tXWAvt0'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_46" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c03ae0fe17423e20f4b984ac6493ad9e" Selector="&lt;html app='chrome.exe' title='hybris Backoffice' /&gt;&lt;webctrl tag='SPAN' innertext='User' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN  tXWAqy0'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8431a537eea13ddb4ba4c03cc4b43ae8" Selector="&lt;html app='chrome.exe' title='hybris Backoffice' /&gt;&lt;webctrl tag='SPAN' innertext='Customers' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  hOBF221-real'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_48" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6111c5abaab491321867c3fe6b5d387c" Selector="&lt;html app='chrome.exe' title='hybris Backoffice' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;input' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  tXWAke-real'" EmptyField="False" sap:VirtualizedContainerService.HintSize="464,134" sap2010:WorkflowViewState.IdRef="TypeInto_19" SendWindowMessages="False" SimulateType="False" Text="[emailaddress]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6111c5abaab491321867c3fe6b5d387c" Selector="&lt;html app='chrome.exe' title='hybris Backoffice' /&gt;&lt;webctrl tag='INPUT' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;input' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  dRDQld'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="Click_49" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition Position="Center">
+            <ui:CursorPosition.OffsetX>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetX>
+            <ui:CursorPosition.OffsetY>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:CursorPosition.OffsetY>
+          </ui:CursorPosition>
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d17eac7b992086bb1fc4469443d13f17" Selector="&lt;html app='chrome.exe' title='hybris Backoffice' /&gt;&lt;webctrl tag='BUTTON' aaname='Search' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN  e8FPb21'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetValue_68">
+        <ui:GetValue.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ede669eb211b2dfd14c5061b01bee15b" Selector="&lt;html app='chrome.exe' title='hybris Backoffice' /&gt;&lt;webctrl tag='DIV' class='z-listbox-body' idx='5' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:GetValue.Target>
+        <ui:GetValue.Value>
+          <OutArgument x:TypeArguments="x:String">[backoffice_emailstorage]</OutArgument>
+        </ui:GetValue.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetValue>
+      <t:StartTest TestCase="{x:Null}" DisplayName="Start test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="StartTest_7" ScenarioName="Verify the lead captured in yComm Back office &#xA;" Status="STARTED" />
+      <If Condition="[backoffice_emailstorage.Contains(emailaddress)]" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_70">
+        <If.Then>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_13" Status="PASSED" />
+        </If.Then>
+        <If.Else>
+          <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="EndTest_14" Status="FAIL" />
+        </If.Else>
+      </If>
+      <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'DIV  nG3Q0a1'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_5" Screenshot="[BOimage]">
+        <ui:TakeScreenshot.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="bcd17f1c8a1423821ccf6565b39a4cb8" WaitForReady="INTERACTIVE" />
+        </ui:TakeScreenshot.Target>
+      </ui:TakeScreenshot>
+      <ui:SaveImage DisplayName="Save Image" FileName="IDP_ME_Scripts\Result\BOImage.png" sap:VirtualizedContainerService.HintSize="464,92" sap2010:WorkflowViewState.IdRef="SaveImage_5" Image="[BOimage]" />
+      <t:EndTest DisplayName="End test" sap:VirtualizedContainerService.HintSize="464,22" sap2010:WorkflowViewState.IdRef="EndTest_15" Status="Started" />
+      <Sequence DisplayName="Zipping Images" sap:VirtualizedContainerService.HintSize="464,456" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ZipPath" />
+          <Variable x:TypeArguments="x:String" Name="ExtractPath" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[ZipPath]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">D:\My Documents backup\UiPath\IDP_Enquiry\IDP_ME_Scripts\Result</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[ExtractPath]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">D:\My Documents backup\UiPath\IDP_Enquiry\IDP_ME_Scripts\Result.rar</InArgument>
+          </Assign.Value>
+        </Assign>
+        <InvokeMethod DisplayName="Invoke method" sap:VirtualizedContainerService.HintSize="242,132" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="CreateFromDirectory" TargetType="sic:ZipFile">
+          <InArgument x:TypeArguments="x:String">[zipPath]</InArgument>
+          <InArgument x:TypeArguments="x:String">[extractPath]</InArgument>
+        </InvokeMethod>
+      </Sequence>
+      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="Hi, &#xA;&#xA;Please find the attachment for IDP Registration Automation Status&#xA;&#xA;Regards&#xA;" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="464,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="IDP Registration Automation" To="jegadiswaran.s@idp.com">
+        <ui:SendOutlookMail.Files>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+            <InArgument x:TypeArguments="x:String">D:\My Documents backup\UiPath\IDP_Enquiry\IDP_ME_Scripts\Result.rar</InArgument>
+            <InArgument x:TypeArguments="x:String">D:\My Documents backup\UiPath\IDP_Enquiry\Testing-Report.html</InArgument>
+          </scg:List>
+        </ui:SendOutlookMail.Files>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:SendOutlookMail>
+    </Sequence>
+  </Sequence>
+</Activity>
